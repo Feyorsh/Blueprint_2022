@@ -1,5 +1,5 @@
-import PIL import Image
+from PIL import Image
 
 def convertToPPM(file):
     im = Image.open(file)
-    im.save("da_cat.ppm")
+    im.save(file[:-4]+".ppm")

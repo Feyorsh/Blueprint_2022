@@ -10,15 +10,16 @@ import KittyKrypt.Conversion as Conversion
 ALLOWED_EXTENSIONS = {'ppm', 'jpg', 'png', 'gif'}
 
 def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+    #return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+    return 
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = "uploads"
 
 class State:
     def __init__(self):
-        self.input_file = "da_cat.png"
-        self.nonce = None
+        self.input_file = "super_secret.txt"
+        self.cat_file = "hackercat.jpg"
 
 
 props = State()
@@ -29,21 +30,27 @@ props = State()
 def index():
     if request.method == "POST":
         if 'file' in request.files:
-            if (file := request.files['file']) != '' and allowed_file(file.filename):
-                file.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(file.filename)))
-                props.input_file = secure_filename(file.filename)
-                Conversion.convertToPPM(props.input_file)
-        if request.form.get('do_the_thing') is not None:
-            if request.form.get("encryption") is not None:
-                with open 
-                kt.encryptFile(props.input_file)
-                return send_file(props.input_file[:-4]+".ppm", as_attachment=True, attachment_filename=props.input_file+".kky")
-            else:
-                if (key := request.form.get("cat_key")) is not None:
-                    kt.decryptFile(props.input_file, key, props.nonce)
+            files = request.files.getlist("file")
+            for file in files:
+                if "cat" in file.filename:
+                    file.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(file.filename)))
+                    props.cat_file = secure_filename(file.filename)
+                    Conversion.convertToPPM(props.input_file)
+                else:
+                    file.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(file.filename)))
+                    props.input_file = secure_filename(file.filename)
+        if request.form.get("encryption") is not None:
+            encrypted = kt.encryptFile(props.input_file, kt.keyFromCat(props.cat_file[:-4]+".ppm"))
+            with open(props.input_file+".kky", 'w') as f:
+                f.write(encrypted)
+                return send_file(f, as_attachment=True)
+        elif request.form.get("decryption") is not None:
+            assert(props.cat_file[-10:] == ".encrypted")
+            key = kt.keyFromCat(props.cat_file)
+            with open(props.input_file, 'rb') as f:
+                tmp = f.read().split(b'\xff\xff\xff\xff\xff')
+                with open("AHHHHHH.txt", 'wb') as fml:
+                    fml.write(tmp[0])
+                kt.decryptFile(fml, key, tmp[1])
+
     return render_template("app.html", props=props)
-
-
-@app.route('/about')
-def about():
-    return render_template("about.html")
