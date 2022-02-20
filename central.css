@@ -41,6 +41,12 @@ body{
     justify-content: center;
     color : white;
 }
+#Search{
+    display: flex;
+    padding: 5px;
+    margin :10px;
+    
+}
 #central-image{
     display: flex;
     flex-direction:column;
