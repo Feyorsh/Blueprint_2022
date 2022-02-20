@@ -9,3 +9,9 @@ function random_kitty(){
     
 }
 
+function upload_url(){
+    const imgurl = document.querySelector("#image-upload");
+    console.log(imgurl);
+    console.log(`url("${imgurl}")`);
+    document.querySelector("#Cat-Image").src = `url("${imgurl}")`;
+}

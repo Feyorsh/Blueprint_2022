@@ -3,6 +3,7 @@
     <title>KittyKrypt</title>
     <link rel="stylesheet" href="Kitty.css" type="text/css">
 </head>
+
 <body>
     <div class = "full_body"> 
         <div class = "Full_encryptor">
@@ -15,7 +16,8 @@
 
             </div>
             <div class = "Image Upload">
-                <input type="file" accept="image/*">
+                <input id = "image_upload" value = "https://cdn2.thecatapi.com/images/MTgzNTU1MQ.jpg">
+                <button id = "Enter_Button" onClick = "upload_url()">Enter</button>
                 <img width = "300"; height ="300"  src = "https://cdn2.thecatapi.com/images/muDrZOVdQ.jpg" id = "Cat-Image">
             </div>
             <div class = "Key_code">
