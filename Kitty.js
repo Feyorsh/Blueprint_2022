@@ -3,7 +3,7 @@ function random_kitty(){
         response.json().then(data => {
           console.log(data[0].url);
           document.querySelector("#Cat-Image").src = data[0].url;
-          document.querySelector("#download_pic").download = data[0].url;
+          document.querySelector("#download_pic").href = data[0].url;
         });
     });
     
