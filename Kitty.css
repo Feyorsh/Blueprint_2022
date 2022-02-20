@@ -21,3 +21,23 @@ body{
     justify-content: flex-end;
     margin:100px;
 }
+
+.Enc_or_dec button {
+    background-color: #04AA6D; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 100%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+    border-radius: 4px;
+}
+  
+.Enc_or_dec button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+  
+  /* Add a background color on hover */
+.Enc_or_dec button:hover {
+    background-color: #3e8e41;
+}
