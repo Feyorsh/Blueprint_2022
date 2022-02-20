@@ -10,8 +10,8 @@ function random_kitty(){
 }
 
 function upload_url(){
-    const imgurl = document.querySelector("#image-upload");
+    const imgurl = document.getElementById("image_upload").value;
     console.log(imgurl);
     console.log(`url("${imgurl}")`);
-    document.querySelector("#Cat-Image").src = `url("${imgurl}")`;
+    document.querySelector("#Cat-Image").src =imgurl;
 }
