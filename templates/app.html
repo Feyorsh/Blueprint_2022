@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class = "full_body"> 
+    <div class = "Full_encryptor">
+        <div class = "Encrypt_text">
+            <p> Encrypt Text Files using Random Key</p>
+        </div>
+        <div class = "Enc_or_dec">
+            <button>Encrypt</button>
+            <button>Decrypt</button>
+
+        </div>
+        <div class="Upload a cat">
+            <form action="POST">
+                <input type="file" accept="image/*" name="cat_pic">
+                <button type="submit" class="btn btn-success" name="random_cat">Random cat!</button>
+            <img width = "300"; height ="300"  src = "{{ url_for('static', filename=props.cat_File) }}" id = "Cat-Image">
+            </form>
+        </div>
+                <form action="{{ url_for('index') }}" method="post">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" name="encryption" checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Encryption
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" name="decryption">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          Decryption
+                        </label>
+                      </div>
+                    <button type="submit" class="btn btn-success" name="do_the_thing">Meow!</button>
+                    </form>
+                <div class= "button" id = "random_kitty" onClick="random_kitty()">Random Kitty!</div>
+            </div>
+        </div>
+    </div>
+    <div class = "Full_Decryptor">
+        <div class = "Decrypt_text">
+            <p>Decrypt Files using Random Key</p>
+        </div>
+        <div class = "Image Upload">
+            <img width = "300"; height ="300"  src = "https://cdn2.thecatapi.com/images/muDrZOVdQ.jpg">
+        </div>
+        <div class = "Key_code">
+            <p>Key Code entered Below</p>
+            <input id = "kitty_key"> Enter Key Code </input>
+        </div>
+    </div>
+</div>
+{% endblock %}
