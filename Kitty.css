@@ -1,0 +1,23 @@
+body{
+    background-color : pink;
+}
+.full_body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.Full_encryptor{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 100px;
+}
+.Full_Decryptor{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin:100px;
+}

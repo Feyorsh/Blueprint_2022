@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <head>
     <title>KittyKrypt</title>
-    <link rel="stylesheet" href="" type="text/css">
+    <link rel="stylesheet" href="Kitty.css" type="text/css">
 </head>
 <body>
     <div class = "full_body"> 
-        </div class = "Full_encryptor">
+        <div class = "Full_encryptor">
             <div class = "Encrypt_text">
                 <p> Encrypt Text Files using Random Key</p>
             </div>
             <div class = "Image Upload">
+                <input type="file" accept="image/*">
                 <img src = "null">
             </div>
             <div class = "Key_code">
                 <p>Key Code entered Below</p>
                 <input id = "kitty_key"> Enter Key Code </input>
+                <div class = "Encrypt_buttons">
+                    <a href = "null" download><div class = "button" id = "Kitty_Download">Download Kitty!</div></a>
+                    <div class= "button" id = "random_kitty" onclick="random_kitty">Random Kitty!</div>
+                </div>
             </div>
         </div>
         <div class = "Full_Decryptor">
