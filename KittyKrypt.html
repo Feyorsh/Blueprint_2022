@@ -7,11 +7,12 @@
     <div class = "full_body"> 
         <div class = "Full_encryptor">
             <div class = "Encrypt_text">
-                <p> Encrypt Text Files using Random Key</p>
+                <p id = "Explanation"> ENCRYPT Text Files Using a Kitty Picture</p>
             </div>
             <div class = "Enc_or_dec">
-                <button>Encrypt</button>
-                <button>Decrypt</button>
+                <button onclick="change_to_encrypt()">Encrypt🤓</button>
+                <button onclick="change_to_decrypt()">Decrypt🧐</button>
+                <button>Kitty Chungus😼</button>
 
             </div>
             <div class = "Image Upload">
@@ -19,15 +20,15 @@
                 <img src = "null">
             </div>
             <div class = "Key_code">
-                <p>Key Code entered Below</p>
-                <input id = "kitty_key"> Enter Key Code </input>
+                <p id = "Explanation2">Enter Your Unencrypted Message Below</p>
+                <textarea id = "kitty_message"> Enter Message </textarea>
                 <div class = "Encrypt_buttons">
                     <a href = "null" download><div class = "button" id = "Kitty_Download">Download Kitty!</div></a>
                     <div class= "button" id = "random_kitty" onclick="random_kitty">Random Kitty!</div>
                 </div>
             </div>
         </div>
-        <div class = "Full_Decryptor">
+        <!-- <div class = "Full_Decryptor">
             <div class = "Decrypt_text">
                 <p>Decrypt Files using Random Key</p>
             </div>
@@ -38,6 +39,17 @@
                 <p>Key Code entered Below</p>
                 <input id = "kitty_key"> Enter Key Code </input>
             </div>
-        </div>
+        </div> -->
     </div>
+    <script>
+        function change_to_encrypt(){
+            document.getElementById("Explanation").innerHTML = `ENCRYPT Text Files Using a Kitty Picture`;
+            document.getElementById("Explanation2").innerHTML = `Enter Your Unencrypted Message Below`;
+
+        }
+        function change_to_decrypt(){
+            document.getElementById("Explanation").innerHTML = `DECRYPT Text Files Using a Kitty Picture`;
+            document.getElementById("Explanation2").innerHTML = `Enter Your Encrypted Message Below`;
+        }
+    </script>
 </body>
