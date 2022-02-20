@@ -40,6 +40,15 @@ body{
     flex-direction: row;
     justify-content: center;
     color : white;
+
+}
+#Search{
+    margin: 5px;
+
+}
+#Random{
+    margin: 5px;
+
 }
 #central-image{
     display: flex;
