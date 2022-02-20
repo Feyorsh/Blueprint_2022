@@ -17,14 +17,14 @@
             </div>
             <div class = "Image Upload">
                 <input type="file" accept="image/*">
-                <img src = "null">
+                <img width = "300"; height ="300"  src = "https://cdn2.thecatapi.com/images/muDrZOVdQ.jpg" id = "Cat-Image">
             </div>
             <div class = "Key_code">
                 <p id = "Explanation2">Enter Your Unencrypted Message Below</p>
                 <textarea id = "kitty_message"> Enter Message </textarea>
                 <div class = "Encrypt_buttons">
-                    <a href = "null" download><div class = "button" id = "Kitty_Download">Download Kitty!</div></a>
-                    <div class= "button" id = "random_kitty" onclick="random_kitty">Random Kitty!</div>
+                    <a id = "download_pic" href = "" download="KittyKrypt" >Download</a>
+                    <div class= "button" id = "random_kitty" onClick="random_kitty()">Random Kitty!</div>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
                 <p>Decrypt Files using Random Key</p>
             </div>
             <div class = "Image Upload">
-                <img src = "null">
+                <img width = "300"; height ="300"  src = "https://cdn2.thecatapi.com/images/muDrZOVdQ.jpg">
             </div>
             <div class = "Key_code">
                 <p>Key Code entered Below</p>
@@ -53,3 +53,5 @@
         }
     </script>
 </body>
+
+<script src="Kitty.js"></script>
