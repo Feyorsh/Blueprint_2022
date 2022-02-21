@@ -25,7 +25,7 @@ Despite the site skeleton being written in HTML, I (stupidly) decided to transit
 ## Lessons Purr-ned
 ### Paws-itives
 - The fastest I have EVER gotten a team of beginners working with Git. Sure, it's not like we were resolving a bunch of merge conflicts or doing advanced cherry-picking, but I have been unable to find the same success with the similarly sized group of developers on my robotics team.
-- I think (hope?) Max and Nolan had a good first hackathon experience. At the very least, they got some exposure to some new stuff and will get some sponsor swag (**SHAMELESS [BWSI](https://beaverworks.ll.mit.edu/CMS/bw/bwsi) PLUG**).
+- I think (hope?) Max(I did! -Max) and Nolan had a good first hackathon experience. At the very least, they got some exposure to some new stuff and will get some sponsor swag (**SHAMELESS [BWSI](https://beaverworks.ll.mit.edu/CMS/bw/bwsi) PLUG**).
 - I had to suffer for it, but I discovered more pitfalls to Flask. Did you know that adding the `name` attribute to an `<input>` will change its key in the Werkzeug `file` object? Me neither!
 ### Shiver Me Whiskers
 - My biggest error was prioritizing what I wanted to make over what my team realistically could have made in the alloted time. This, combined with my poor communication and leadership skills, made for a really disconnected development experience which left me with a ton of work. Concurrent feature development is absolutely essential in a hackathon environment, but I was definitely going at it like I was alone and had the whole weekend to spare.
