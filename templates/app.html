@@ -1,53 +1,65 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class = "full_body"> 
-    <div class = "Full_encryptor">
-        <div class = "Encrypt_text">
-            <p> Encrypt Text Files using Random Key</p>
-        </div>
-        <div class = "Enc_or_dec">
-            <button>Encrypt</button>
-            <button>Decrypt</button>
-
-        </div>
-        <div class="Upload a cat">
-            <form action="POST">
-                <input type="file" accept="image/*" name="cat_pic">
-                <button type="submit" class="btn btn-success" name="random_cat">Random cat!</button>
-            <img width = "300"; height ="300"  src = "{{ url_for('static', filename=props.cat_File) }}" id = "Cat-Image">
+    <div class="container">
+        <figure>
+            <blockquote class="blockquote">
+                <h1 class="display-2">KittyKrypt</h1>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+            Truly a work of art
+            </figcaption>
+        </figure>
+    </div>
+<div class="row">
+    <div class="col-md">
+        <div class="container">
+            <h2>Step 1</h2>
+            <form action="{{ url_for('index') }}" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="cat_file" class="form-label">Select a cat picture to act as your key!</label>
+                    <input class="form-control" id="cat_file" type="file" name="cat_file">
+                </div>
+                <div class="mb-3">
+                    <label for="cat_key" class="form-label">Already have a key? Enter it in here!</label>
+                    <input class="form-control" id="cat_key" type="text" name="cat_key">
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary" name="random_cat">Random cat!</button>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-success" name="load_cat">Submit</button>
+                </div>
             </form>
-        </div>
-                <form action="{{ url_for('index') }}" method="post">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" name="encryption" checked>
-                        <label class="form-check-label" for="flexRadioDefault1">
-                          Encryption
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" name="decryption">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                          Decryption
-                        </label>
-                      </div>
-                    <button type="submit" class="btn btn-success" name="do_the_thing">Meow!</button>
-                    </form>
-                <div class= "button" id = "random_kitty" onClick="random_kitty()">Random Kitty!</div>
-            </div>
+            <img width="300" height="300" src="{{ url_for('static', filename='uploads/cat'+props.cat_extension) }}" id="Cat-Image">
+            <p class="text-muted">Don't forget to save your image!</p>
         </div>
     </div>
-    <div class = "Full_Decryptor">
-        <div class = "Decrypt_text">
-            <p>Decrypt Files using Random Key</p>
-        </div>
-        <div class = "Image Upload">
-            <img width = "300"; height ="300"  src = "https://cdn2.thecatapi.com/images/muDrZOVdQ.jpg">
-        </div>
-        <div class = "Key_code">
-            <p>Key Code entered Below</p>
-            <input id = "kitty_key"> Enter Key Code </input>
+    <div class="col-md">
+        <div class="container">
+            <h2>Step 2</h2>
+            <form action="{{ url_for('index') }}" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="input_file" class="form-label">Select the file you would like to encrypt/decrypt.</label>
+                    <input class="form-control" id="input_file" type="file" name="input_file">
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radiobutton" id="flexRadioDefault1" value="encryption" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Encryption
+                    </label>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radiobutton" id="flexRadioDefault2" value="decryption">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Decryption
+                    </label>
+                    </div>
+                <button type="submit" class="btn btn-success" name="load_input">Submit</button>
+            </form>
         </div>
     </div>
 </div>
+            
+
 {% endblock %}
